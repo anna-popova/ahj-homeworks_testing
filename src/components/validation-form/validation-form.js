@@ -1,6 +1,7 @@
 import './validation-form.scss';
 import luhnAlgorithm from '../luhn-algorithm/luhn-algorithm';
-import CardList from '../cards-list/cards-list' 
+import CardList from '../cards-list/cards-list';
+import cardsListItemDisable from '../cards-list-item-disable/cards-list-item-disable';
 
 export default class ValidationForm {
     // constructor(element) {
@@ -56,11 +57,7 @@ export default class ValidationForm {
             const cardTypeDinersClub = document.querySelector('.cards-list__item_diners-club');
             cardList.showCardImg(cardTypeDinersClub);
         } else {
-            //TODO: добавить общую функцию
-            const cardsListItems = document.querySelectorAll('.cards-list__item');
-            for (const cardsListItem of cardsListItems) {
-                cardsListItem.classList.add('disabled');
-            }
+            cardsListItemDisable();
             
             infoNoType.classList.remove('hidden');
         }

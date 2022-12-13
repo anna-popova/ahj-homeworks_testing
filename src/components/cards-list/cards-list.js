@@ -1,4 +1,5 @@
 import './cards-list.scss';
+import cardsListItemDisable from '../cards-list-item-disable/cards-list-item-disable';
 
 export default class CardList {
     // constructor(element) {
@@ -6,12 +7,8 @@ export default class CardList {
     // }
 
     showCardImg(value) {
-        //TODO: добавить общую функцию
-        const cardsListItems = document.querySelectorAll('.cards-list__item');
-        for (const cardsListItem of cardsListItems) {
-            cardsListItem.classList.add('disabled');
-        }
+      cardsListItemDisable();
 
-        value.classList.remove('disabled');
+      value.classList.remove('disabled');
     }
 }
