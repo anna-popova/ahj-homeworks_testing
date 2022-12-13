@@ -1,12 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Validate Credit Card Numbers</title>
 </head>
 <body>
-<h1>Hello, from Netology!</h1>
+    <div class="container">
+      <header class="container__header">
+          <h1>Проверка номеров кредитных карт</h1>
+          <h2>Проверьте номер кредитной карты с помощью нашей онлайн-проверки!</h2>
+      </header>
+  
+      <div class="validation-form">
+        <h3>Проверьте номер кредитной карты</h3>
+  
+        <ul class="validation-form__cards-list cards-list">
+            <li class="cards-list__item cards-list__item_mir" title="Mir"><img src="../src/img/mir.png"><span>Мир</span></li>
+            <li class="cards-list__item cards-list__item_visa" title="Visa"><img src="../src/img/visa_straight.png"><span>Visa</span></li>
+            <li class="cards-list__item cards-list__item_mastercard" title="Mastercard"><img src="../src/img/mastercard_straight.png"><span>Mastercard</span></li>
+            <li class="cards-list__item cards-list__item_amex" title="American Express"><img src="../src/img/american_express_straight.png"><span>American Express</span></li>
+            <li class="cards-list__item cards-list__item_discover" title="Discover"><img src="../src/img/discover.jpeg"><span>Discover</span></li>
+            <li class="cards-list__item cards-list__item_jcb" title="JCB"><img src="../src/img/jcb.png"><span>JCB International</span></li>
+            <li class="cards-list__item cards-list__item_diners-club" title="Diners Club"><img src="../src/img/diners.jpg"><span>Diners Club</span></li>
+        </ul>
+  
+        <form id="form" class="validation-form__form" novalidate="novalidate">
+            <div class="validation-form__form-group">
+                <input class="validation-form__form-control" id="card_number" name="card_number" type="text" placeholder="Введите номер карты без пробелов" data-original-title="" title="">
+                <button id="submitform" class="validation-form__btn">Нажмите для проверки</button>
+            </div>
+        </form>
+  
+        <div class="validation-form__no-type hidden">
+          <p>Не удалось определить номер карты!</p>
+        </div>
+  
+        <div class="validation-form__no-valid hidden">
+            <p>Карта не валидна!</p>
+        </div>
+  
+        <div class="validation-form__valid hidden">
+          <p>Карта валидна!</p>
+        </div>
+      </div>
+    </div>
 </body>
 </html>
