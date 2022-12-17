@@ -16,8 +16,11 @@ describe('page start', () => {
         page = await browser.newPage();
     });
 
+    //тесты
     test('test', async () => {
         await page.goto('http://localhost:9000');
+
+        await page.waitFor('body');
     });
 
     //закрыть браузер
