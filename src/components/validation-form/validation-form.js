@@ -10,7 +10,7 @@ export default class ValidationForm {
 
     //проверка валидации карты
     checkValid() {
-        const formControlValue = document.querySelector('.validation-form__form-control').value;
+        const formControlValue = document.querySelector('.validation-form__input').value;
         const checkValidResult = luhnAlgorithm(formControlValue);
         //console.log(checkValidResult);
 
@@ -30,7 +30,7 @@ export default class ValidationForm {
     checkType() {
         const cardList = new CardList(document.querySelector('.card-list'));
 
-        const formControlValue = document.querySelector('.validation-form__form-control').value;
+        const formControlValue = document.querySelector('.validation-form__input').value;
 
         const infoNoType = document.querySelector('.validation-form__no-type');
         infoNoType.classList.add('hidden');

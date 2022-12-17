@@ -4,7 +4,7 @@ describe('page start', () => {
     let browser;
     let page;
 
-    beforeEach(async () => {
+    beforeAll(async () => {
       //открыть браузер
         browser = await puppeteer.launch({
             headless: false,
