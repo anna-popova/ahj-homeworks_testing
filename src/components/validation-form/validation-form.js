@@ -28,7 +28,8 @@ export default class ValidationForm {
 
     //проверка типа карты
     checkType() {
-        const cardList = new CardList(document.querySelector('.card-list'));
+        const cardList = new CardList(document.querySelector('.cards-list'));
+        console.log(cardList);
 
         const formControlValue = document.querySelector('.validation-form__input').value;
 
