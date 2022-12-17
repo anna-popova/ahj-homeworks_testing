@@ -33,6 +33,7 @@
     "live-server": "^1.2.2",
     "mini-css-extract-plugin": "^2.6.1",
     "prettier": "2.7.1",
+    "puppeteer": "^19.4.1",
     "sass": "^1.56.2",
     "sass-loader": "^13.2.0",
     "webpack": "^5.75.0",
