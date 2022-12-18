@@ -20,38 +20,44 @@ describe('check type of card', () => {
     test('validation form should render on page start', async () => {
         await page.goto('http://localhost:9000');
 
-        await page.waitFor('.validation-form');
+        await page.waitForSelector('.validation-form');
     });
 
-    test('get type of card American Express', async () => {
+    test('card should be valid', async () => {
+      //jest.setTimeout(60000);
+
       await page.goto('http://localhost:9000');
 
-      await page.waitFor('.validation-form');
+      await page.waitForSelector('.validation-form');
 
       const validationForm = await page.$('.validation-form');
       const validationFormInput = await validationForm.$('.validation-form__input');
       const validationFormBtn = await validationForm.$('.validation-form__btn');
 
-      await validationFormInput.type('371449635398431');
+      await validationFormInput.type('6011111111111117');
       await validationFormBtn.click();
 
-      await page.waitFor('.cards-list__item .cards-list__item_amex');
-  });
+      await page.waitForSelector('.validation-form__valid');
+      await page.waitForSelector('.validation-form__no-valid .hidden');
+  }, 60000);
 
-    test('get type of card Visa', async () => {
+    test('card should be invalid', async () => {
+      //jest.setTimeout(60000);
+      
       await page.goto('http://localhost:9000');
 
-      await page.waitFor('.validation-form');
+      await page.waitForSelector('.validation-form');
 
       const validationForm = await page.$('.validation-form');
       const validationFormInput = await validationForm.$('.validation-form__input');
       const validationFormBtn = await validationForm.$('.validation-form__btn');
 
-      await validationFormInput.type('4111111111111111');
+      await validationFormInput.type('6011111111111115');
       await validationFormBtn.click();
 
-      await page.waitFor('.cards-list__item .cards-list__item_visa');
-    });
+      await page.waitForSelector('.validation-form__no-valid');
+      await page.waitForSelector('.validation-form__valid .hidden');
+    }, 60000);
 
     //закрыть браузер
     afterAll(async () => {

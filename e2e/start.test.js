@@ -20,7 +20,7 @@ describe('page start', () => {
     test('test', async () => {
         await page.goto('http://localhost:9000');
 
-        await page.waitFor('body');
+        await page.waitForSelector('body');
     });
 
     //закрыть браузер
