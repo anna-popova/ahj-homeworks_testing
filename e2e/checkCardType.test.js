@@ -42,7 +42,7 @@ describe('check type of card', () => {
       await page.waitForSelector('.cards-list__item .cards-list__item_amex .checked');
   }, 60000);
 
-      test('type of card should be American Express', async () => {
+      test('type of card should be Visa', async () => {
 
         await page.goto('http://localhost:9000');
 

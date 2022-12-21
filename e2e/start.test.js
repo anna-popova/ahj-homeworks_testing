@@ -17,7 +17,7 @@ describe('page start', () => {
     });
 
     //тесты
-    test('test', async () => {
+    test('test page rendering', async () => {
         await page.goto('http://localhost:9000');
 
         await page.waitForSelector('body');
