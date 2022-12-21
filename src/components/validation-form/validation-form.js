@@ -1,7 +1,6 @@
 import './validation-form.scss';
 import luhnAlgorithm from '../luhn-algorithm/luhn-algorithm';
-import CardList from '../cards-list/cards-list';
-import cardsListItemDisable from '../cards-list-item-disable/cards-list-item-disable';
+import CardList, { cardsListItemDisable } from '../cards-list/cards-list';
 
 export default class ValidationForm {
     // constructor(element) {
@@ -18,23 +17,21 @@ export default class ValidationForm {
         const infoValid = document.querySelector('.validation-form__valid');
 
         if (!checkValidResult) {
-            infoValid.classList.add('hidden');
-            infoNoValid.classList.remove('hidden');
+            infoValid.classList.remove('active');
+            infoNoValid.classList.add('active');
         } else if (checkValidResult) {
-            infoNoValid.classList.add('hidden');
-            infoValid.classList.remove('hidden');
+            infoNoValid.classList.remove('active');
+            infoValid.classList.add('active');
         }
     }
 
     //проверка типа карты
     checkType() {
         const cardList = new CardList(document.querySelector('.cards-list'));
-        console.log(cardList);
 
         const formControlValue = document.querySelector('.validation-form__input').value;
 
         const infoNoType = document.querySelector('.validation-form__no-type');
-        infoNoType.classList.add('hidden');
 
         if (formControlValue.startsWith('2')) {
             const cardTypeMir = document.querySelector('.cards-list__item_mir');
@@ -60,7 +57,7 @@ export default class ValidationForm {
         } else {
             cardsListItemDisable();
             
-            infoNoType.classList.remove('hidden');
+            infoNoType.classList.add('active');
         }
     }
 }

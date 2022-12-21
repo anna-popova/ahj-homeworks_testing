@@ -45,17 +45,20 @@
       box-sizing: border-box;
    }
 
+   &__no-valid, &__no-type, &__valid {
+    display: none;
+    font-size: 20px;
+   }
+
    &__no-valid, &__no-type {
-      font-size: 20px;
       color: red;
    }
 
    &__valid {
-      font-size: 20px;
       color: green;
    }
 }
 
-.hidden {
-   display: none;
+.active {
+   display: block;
 }

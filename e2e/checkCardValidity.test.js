@@ -24,7 +24,6 @@ describe('check type of card', () => {
     });
 
     test('card should be valid', async () => {
-      //jest.setTimeout(60000);
 
       await page.goto('http://localhost:9000');
 
@@ -37,12 +36,10 @@ describe('check type of card', () => {
       await validationFormInput.type('6011111111111117');
       await validationFormBtn.click();
 
-      await page.waitForSelector('.validation-form__valid');
-      await page.waitForSelector('.validation-form__no-valid .hidden');
+      await page.waitForSelector('.validation-form__valid .active');
   }, 60000);
 
     test('card should be invalid', async () => {
-      //jest.setTimeout(60000);
       
       await page.goto('http://localhost:9000');
 
@@ -55,8 +52,7 @@ describe('check type of card', () => {
       await validationFormInput.type('6011111111111115');
       await validationFormBtn.click();
 
-      await page.waitForSelector('.validation-form__no-valid');
-      await page.waitForSelector('.validation-form__valid .hidden');
+      await page.waitForSelector('.validation-form__no-valid .active');
     }, 60000);
 
     //закрыть браузер

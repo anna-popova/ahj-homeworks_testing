@@ -12,6 +12,7 @@
       background-position: 0 0;
       border-radius: 4px;
       background-color: rgb(194, 193, 193);
+      opacity: 0.3;
 
       &:last-child {
          margin-right: 0;
@@ -29,6 +30,6 @@
    }
 }
 
-.disabled {
-   opacity: 0.3;
+.checked {
+   opacity: 1;
 }
