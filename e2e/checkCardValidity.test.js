@@ -36,7 +36,7 @@ describe('check type of card', () => {
       await validationFormInput.type('6011111111111117');
       await validationFormBtn.click();
 
-      await page.waitForSelector('.validation-form__valid .active');
+      await page.waitForSelector('.validation-form__valid.active');
   }, 60000);
 
     test('card should be invalid', async () => {
@@ -52,7 +52,7 @@ describe('check type of card', () => {
       await validationFormInput.type('6011111111111115');
       await validationFormBtn.click();
 
-      await page.waitForSelector('.validation-form__no-valid .active');
+      await page.waitForSelector('.validation-form__no-valid.active');
     }, 60000);
 
     //закрыть браузер
