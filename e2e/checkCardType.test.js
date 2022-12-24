@@ -5,7 +5,7 @@ describe('check type of card', () => {
     let page;
 
     beforeAll(async () => {
-      //открыть браузер
+        //открыть браузер
         browser = await puppeteer.launch({
             headless: false,
             slowMo: 100,
