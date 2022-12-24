@@ -72,8 +72,9 @@ describe('check type of card', () => {
     }, 60000);
 
     //закрыть браузер
-    afterAll(async () => {
-        await browser.close();
-    })
+    // afterAll(async () => {
+    //     await browser.close();
+    // })
+    browser.close();
 });
 

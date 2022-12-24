@@ -24,8 +24,9 @@ describe('page start', () => {
     });
 
     //закрыть браузер
-    afterAll(async () => {
-        await browser.close();
-    })
+   //  afterAll(async () => {
+   //      await browser.close();
+   //  })
+	browser.close();
 });
 
