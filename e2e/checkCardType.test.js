@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer';
 
+jest.setTimeout(60000);
+
 describe('check type of card', () => {
     let browser;
     let page;
@@ -37,7 +39,7 @@ describe('check type of card', () => {
       await validationFormBtn.click();
 
       await page.waitForSelector('.cards-list__item_amex.checked');
-  }, 60000);
+  });
 
       test('type of card should be Visa', async () => {
 
@@ -53,7 +55,7 @@ describe('check type of card', () => {
         await validationFormBtn.click();
 
         await page.waitForSelector('.cards-list__item_visa.checked');
-    }, 60000);
+    });
 
     test('type of card should be indefinite', async () => {
 
@@ -69,7 +71,7 @@ describe('check type of card', () => {
       await validationFormBtn.click();
 
       await page.waitForSelector('.validation-form__no-type.active');
-    }, 60000);
+    });
 
     //закрыть браузер
     afterAll(async () => {

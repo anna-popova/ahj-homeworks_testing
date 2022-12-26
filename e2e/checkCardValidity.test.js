@@ -1,5 +1,7 @@
 import puppeteer from 'puppeteer';
 
+jest.setTimeout(60000);
+
 describe('check type of card', () => {
     let browser;
     let page;
@@ -37,7 +39,7 @@ describe('check type of card', () => {
       await validationFormBtn.click();
 
       await page.waitForSelector('.validation-form__valid.active');
-  }, 60000);
+  });
 
     test('card should be invalid', async () => {
       
@@ -53,7 +55,7 @@ describe('check type of card', () => {
       await validationFormBtn.click();
 
       await page.waitForSelector('.validation-form__no-valid.active');
-    }, 60000);
+    });
 
     //закрыть браузер
     afterAll(async () => {
