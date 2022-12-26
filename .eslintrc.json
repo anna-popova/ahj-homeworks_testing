@@ -4,7 +4,13 @@
   "env": {
     "es6": true,
     "browser": true,
+    "node": true,
     "jest/globals": true
+  },
+  "globals": {
+    "$": true,
+    "require": true,
+    "process": true
   },
   "parserOptions": {
     "sourceType": "module",
