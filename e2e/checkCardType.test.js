@@ -1,10 +1,10 @@
 import puppeteer from 'puppeteer';
 
-jest.setTimeout(60000);
-
 describe('check type of card', () => {
     let browser;
     let page;
+
+    jest.setTimeout(30000);
 
     beforeAll(async () => {
         //открыть браузер

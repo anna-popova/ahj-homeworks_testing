@@ -4,6 +4,8 @@ describe('page start', () => {
     let browser;
     let page;
 
+    jest.setTimeout(30000);
+
     beforeAll(async () => {
       //открыть браузер
         browser = await puppeteer.launch({
