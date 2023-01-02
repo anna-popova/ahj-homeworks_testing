@@ -1,22 +1,22 @@
-import { doc } from 'prettier';
-import './cards-list.scss';
+import { doc } from "prettier";
+import "./cards-list.scss";
 
 export default class CardList {
-    // constructor(element) {
-    //   this._element = element;
-    // }
+  // constructor(element) {
+  //   this._element = element;
+  // }
 
-    showCardImg(value) {
-      cardsListItemDisable();
+  showCardImg(value) {
+    cardsListItemDisable();
 
-      value.classList.add('checked');
-    }
+    value.classList.add("checked");
+  }
 }
 
 export function cardsListItemDisable() {
-  const cardsListItems = document.querySelectorAll('.cards-list__item');
+  const cardsListItems = document.querySelectorAll(".cards-list__item");
 
   for (const cardsListItem of cardsListItems) {
-      cardsListItem.classList.remove('checked');
+    cardsListItem.classList.remove("checked");
   }
 }

@@ -1,81 +1,83 @@
-import puppeteer from 'puppeteer';
+import puppeteer from "puppeteer";
 
-describe('check type of card', () => {
-    let browser;
-    let page;
+describe("check type of card", () => {
+  let browser;
+  let page;
 
-    jest.setTimeout(30000);
+  jest.setTimeout(30000);
 
-    beforeAll(async () => {
-        //открыть браузер
-        browser = await puppeteer.launch({
-            headless: false,
-            slowMo: 100,
-            devtools: true,
-        });
-
-        //просим браузер открыть новую страницу
-        page = await browser.newPage();
+  beforeAll(async () => {
+    //открыть браузер
+    browser = await puppeteer.launch({
+      headless: false,
+      slowMo: 100,
+      devtools: true,
     });
 
-    //тесты
-    test('validation form should render on page start', async () => {
-        await page.goto('http://localhost:9000');
-
-        await page.waitForSelector('.validation-form');
-    });
-
-    test('type of card should be American Express', async () => {
-
-      await page.goto('http://localhost:9000');
-
-      await page.waitForSelector('.validation-form');
-
-      const validationForm = await page.$('.validation-form');
-      const validationFormInput = await validationForm.$('.validation-form__input');
-      const validationFormBtn = await validationForm.$('.validation-form__btn');
-
-      await validationFormInput.type('371449635398431');
-      await validationFormBtn.click();
-
-      await page.waitForSelector('.cards-list__item_amex.checked');
+    //просим браузер открыть новую страницу
+    page = await browser.newPage();
   });
 
-      test('type of card should be Visa', async () => {
+  //тесты
+  test("validation form should render on page start", async () => {
+    await page.goto("http://localhost:9000");
 
-        await page.goto('http://localhost:9000');
+    await page.waitForSelector(".validation-form");
+  });
 
-        await page.waitForSelector('.validation-form');
+  test("type of card should be American Express", async () => {
+    await page.goto("http://localhost:9000");
 
-        const validationForm = await page.$('.validation-form');
-        const validationFormInput = await validationForm.$('.validation-form__input');
-        const validationFormBtn = await validationForm.$('.validation-form__btn');
+    await page.waitForSelector(".validation-form");
 
-        await validationFormInput.type('4111111111111111');
-        await validationFormBtn.click();
+    const validationForm = await page.$(".validation-form");
+    const validationFormInput = await validationForm.$(
+      ".validation-form__input"
+    );
+    const validationFormBtn = await validationForm.$(".validation-form__btn");
 
-        await page.waitForSelector('.cards-list__item_visa.checked');
-    });
+    await validationFormInput.type("371449635398431");
+    await validationFormBtn.click();
 
-    test('type of card should be indefinite', async () => {
+    await page.waitForSelector(".cards-list__item_amex.checked");
+  });
 
-      await page.goto('http://localhost:9000');
+  test("type of card should be Visa", async () => {
+    await page.goto("http://localhost:9000");
 
-      await page.waitForSelector('.validation-form');
+    await page.waitForSelector(".validation-form");
 
-      const validationForm = await page.$('.validation-form');
-      const validationFormInput = await validationForm.$('.validation-form__input');
-      const validationFormBtn = await validationForm.$('.validation-form__btn');
+    const validationForm = await page.$(".validation-form");
+    const validationFormInput = await validationForm.$(
+      ".validation-form__input"
+    );
+    const validationFormBtn = await validationForm.$(".validation-form__btn");
 
-      await validationFormInput.type('9111111111111111');
-      await validationFormBtn.click();
+    await validationFormInput.type("4111111111111111");
+    await validationFormBtn.click();
 
-      await page.waitForSelector('.validation-form__no-type.active');
-    });
+    await page.waitForSelector(".cards-list__item_visa.checked");
+  });
 
-    //закрыть браузер
-    afterAll(async () => {
-        await browser.close();
-    })
+  test("type of card should be indefinite", async () => {
+    await page.goto("http://localhost:9000");
+
+    await page.waitForSelector(".validation-form");
+
+    const validationForm = await page.$(".validation-form");
+    const validationFormInput = await validationForm.$(
+      ".validation-form__input"
+    );
+    const validationFormBtn = await validationForm.$(".validation-form__btn");
+
+    await validationFormInput.type("9111111111111111");
+    await validationFormBtn.click();
+
+    await page.waitForSelector(".validation-form__no-type.active");
+  });
+
+  //закрыть браузер
+  afterAll(async () => {
+    await browser.close();
+  });
 });
-
