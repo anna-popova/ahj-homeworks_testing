@@ -12,6 +12,9 @@ describe("page start", () => {
       headless: false,
       slowMo: 100,
       devtools: true,
+      env: {
+        DISPLAY: ":10.0",
+      },
     });
 
     //просим браузер открыть новую страницу
