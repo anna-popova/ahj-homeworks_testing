@@ -9,12 +9,12 @@ describe("check type of card", () => {
   beforeAll(async () => {
     //открыть браузер
     browser = await puppeteer.launch({
-      headless: false,
-      slowMo: 100,
-      devtools: true,
-      env: {
-        DISPLAY: ":10.0",
-      },
+      // headless: false,
+      // slowMo: 100,
+      // devtools: true,
+      // env: {
+      //   DISPLAY: ":10.0",
+      // },
     });
 
     //просим браузер открыть новую страницу
