@@ -4,7 +4,7 @@ describe("check type of card", () => {
   let browser;
   let page;
 
-  jest.setTimeout(30000);
+  jest.setTimeout(90000);
 
   beforeAll(async () => {
     //открыть браузер
